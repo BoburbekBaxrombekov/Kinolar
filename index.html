@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <select class="form-select w-25 mx-3 mySelect" aria-label="Default select example">
+                    <option selected value="All">All</option>
+                    <option value="Action" class="myOption">Action</option>
+                    <option value="Comedy" class="myOption">Comedy</option>
+                    <option value="Fantasy" class="myOption">Fantasy</option>
+                    <option value="Adventure" class="myOption">Adventure</option>
+                    <option value="Science Fiction" class="myOption">Science Fiction</option>
+                    <option value="Thriller" class="myOption">Thriller</option>
+                    <option value="Horror" class="myOption">Horror</option>
+                    <option value="Animation" class="myOption">Animation</option>
+                    <option value="Family" class="myOption">Family</option>
+                    <option value="Adventure" class="myOption">Adventure</option>
+                    <option value="Documentary" class="myOption">Documentary</option>
+                  </select>
+                  <button type="button" class="btn btn-danger myBtn" onclick="actionFunc(films)">Filtrlash</button>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <form class="d-flex" id="elForm">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="input">
+                  <a class="btn btn-outline-danger" onclick="RegexFunc(films)">Search</a>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="container">
+        
+        <ul id="listParent">
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="./script.js"></script>
+    <script src="./films.js"></script>
+</body>
+
+</html>

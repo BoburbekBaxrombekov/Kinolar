@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #112539!important;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+#listParent li{
+    list-style: none;
+    color: #f1f1f1;
+    width: 350px;
+    margin: 10px auto;
+    background-color: #212529;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px 0px #555;
+}
+#listParent li img{
+    width: 100%;
+    padding: 20px;
+}
+ul#listParent{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding: 0;
+}
+.myBtn{
+    margin-right: 50px;
+}
+
+
+
