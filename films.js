@@ -392,7 +392,7 @@ function RegexFunc(x) {
 	listParent.innerHTML = ""
 	let regex = new RegExp(`${input.value}`, 'gi')
 	for (let i of x) {
-		if (i.title.match(regex)) {
+		if (i.title.match(regex) || i.overview.match(regex)) {
 			createLi(i)
 		}
 	}
