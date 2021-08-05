@@ -364,7 +364,6 @@ for (let film of films) {
 	let newImg = document.createElement("img")
 	newImg.setAttribute("src", film.poster);
 	newImg.setAttribute("width", "300px");
-	newImg.setAttribute("height", "300px");
 	newLi.appendChild(newImg)
 	let newTitle = document.createElement("h3");
 	newTitle.textContent = film.title
@@ -374,10 +373,7 @@ for (let film of films) {
 	newLi.appendChild(newP)
 	listParent.appendChild(newLi)
 }
-
 let elSelect = document.querySelector('.mySelect')
-let elOption = elSelect.querySelectorAll('.myOption')
-
 
 function actionFunc(x) {
 	listParent.innerHTML = ""
@@ -387,7 +383,6 @@ function actionFunc(x) {
 			let newImg = document.createElement("img")
 			newImg.setAttribute("src", film.poster);
 			newImg.setAttribute("width", "300px");
-			newImg.setAttribute("height", "300px");
 			newLi.appendChild(newImg)
 			let newTitle = document.createElement("h3");
 			newTitle.textContent = film.title
@@ -397,13 +392,11 @@ function actionFunc(x) {
 			newLi.appendChild(newP)
 			listParent.appendChild(newLi)
 		}
-		if (film.genres.includes(elSelect.value)) {
-			console.log("ok")
+		else if (film.genres.includes(elSelect.value)) {
 			let newLi = document.createElement("li");
 			let newImg = document.createElement("img")
 			newImg.setAttribute("src", film.poster);
 			newImg.setAttribute("width", "300px");
-			newImg.setAttribute("height", "300px");
 			newLi.appendChild(newImg)
 			let newTitle = document.createElement("h3");
 			newTitle.textContent = film.title
@@ -414,10 +407,7 @@ function actionFunc(x) {
 			listParent.appendChild(newLi)
 		}
 	}
-
-	// console.log(film.genres)
 }
-
 function RegexFunc(x) {
 	listParent.innerHTML = ""
 	let regex = new RegExp(`${input.value}`, 'gi')
