@@ -359,7 +359,7 @@ var films = [{
 		genres: ['Music', 'Documentary'],
 	},
 ];
-function createAll(x){
+function createLi(x){
 	let newLi = document.createElement("li");
 	let newImg = document.createElement("img")
 	newImg.setAttribute("src", x.poster);
@@ -377,7 +377,6 @@ for (let film of films) {
 	createLi(film)
 }
 let elSelect = document.querySelector('.mySelect')
-
 function actionFunc(x) {
 	listParent.innerHTML = ""
 	for (let film of x) {
