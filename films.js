@@ -359,19 +359,22 @@ var films = [{
 		genres: ['Music', 'Documentary'],
 	},
 ];
-for (let film of films) {
+function createAll(x){
 	let newLi = document.createElement("li");
 	let newImg = document.createElement("img")
-	newImg.setAttribute("src", film.poster);
+	newImg.setAttribute("src", x.poster);
 	newImg.setAttribute("width", "300px");
 	newLi.appendChild(newImg)
 	let newTitle = document.createElement("h3");
-	newTitle.textContent = film.title
+	newTitle.textContent = x.title
 	newLi.appendChild(newTitle)
 	let newP = document.createElement("p");
-	newP.textContent = film.overview
+	newP.textContent = x.overview
 	newLi.appendChild(newP)
 	listParent.appendChild(newLi)
+}
+for (let film of films) {
+	createLi(film)
 }
 let elSelect = document.querySelector('.mySelect')
 
@@ -379,32 +382,10 @@ function actionFunc(x) {
 	listParent.innerHTML = ""
 	for (let film of x) {
 		if (elSelect.value == "All") {
-			let newLi = document.createElement("li");
-			let newImg = document.createElement("img")
-			newImg.setAttribute("src", film.poster);
-			newImg.setAttribute("width", "300px");
-			newLi.appendChild(newImg)
-			let newTitle = document.createElement("h3");
-			newTitle.textContent = film.title
-			newLi.appendChild(newTitle)
-			let newP = document.createElement("p");
-			newP.textContent = film.overview
-			newLi.appendChild(newP)
-			listParent.appendChild(newLi)
+			createLi(film)
 		}
 		else if (film.genres.includes(elSelect.value)) {
-			let newLi = document.createElement("li");
-			let newImg = document.createElement("img")
-			newImg.setAttribute("src", film.poster);
-			newImg.setAttribute("width", "300px");
-			newLi.appendChild(newImg)
-			let newTitle = document.createElement("h3");
-			newTitle.textContent = film.title
-			newLi.appendChild(newTitle)
-			let newP = document.createElement("p");
-			newP.textContent = film.overview
-			newLi.appendChild(newP)
-			listParent.appendChild(newLi)
+			createLi(film)
 		}
 	}
 }
@@ -413,20 +394,7 @@ function RegexFunc(x) {
 	let regex = new RegExp(`${input.value}`, 'gi')
 	for (let i of x) {
 		if (i.title.match(regex)) {
-			console.log(i.title)
-			let newLi = document.createElement("li");
-			let newImg = document.createElement("img")
-			newImg.setAttribute("src", i.poster);
-			newImg.setAttribute("width", "300px");
-			newImg.setAttribute("height", "300px");
-			newLi.appendChild(newImg)
-			let newTitle = document.createElement("h3");
-			newTitle.textContent = i.title
-			newLi.appendChild(newTitle)
-			let newP = document.createElement("p");
-			newP.textContent = i.overview
-			newLi.appendChild(newP)
-			listParent.appendChild(newLi)
+			createLi(i)
 		}
 	}
 }
