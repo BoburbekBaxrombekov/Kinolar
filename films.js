@@ -359,7 +359,10 @@ var films = [{
 		genres: ['Music', 'Documentary'],
 	},
 ];
-function createLi(x){
+
+
+//! Function for Create elements
+function createLi(x) {
 	let newLi = document.createElement("li");
 	let newImg = document.createElement("img")
 	newImg.setAttribute("src", x.poster);
@@ -368,26 +371,48 @@ function createLi(x){
 	let newTitle = document.createElement("h3");
 	newTitle.textContent = x.title
 	newLi.appendChild(newTitle)
-	let newP = document.createElement("p");
-	newP.textContent = x.overview
-	newLi.appendChild(newP)
+	var Btn = document.createElement("button");
+	Btn.dataset.uuid = x.id
+	Btn.textContent = "More"
+	newLi.appendChild(Btn)
 	listParent.appendChild(newLi)
+	//? Function for open Modal window
+	Btn.addEventListener('click', (evt) => {
+		let filmId = evt.target.dataset.uuid
+		let x = films.find((evt) => filmId == evt.id)
+		img.setAttribute("src", x.poster)
+		title.textContent = x.title
+		description.textContent = x.overview
+		myDate.textContent = "Id:" + x.id
+		filmGenres.textContent = "Genres:" + x.genres
+		let elModal = document.querySelector(".Mymodal")
+		elModal.classList.add("Mymodal--active")
+		//? Function for close Modal window
+		btn.addEventListener('click', () => {
+			elModal.classList.remove("Mymodal--active")
+		})
+	})
+
 }
+
+//? | Default position
 for (let film of films) {
 	createLi(film)
 }
+//todo | Function for Filter by actions
 let elSelect = document.querySelector('.mySelect')
+
 function actionFunc(x) {
 	listParent.innerHTML = ""
 	for (let film of x) {
 		if (elSelect.value == "All") {
 			createLi(film)
-		}
-		else if (film.genres.includes(elSelect.value)) {
+		} else if (film.genres.includes(elSelect.value)) {
 			createLi(film)
 		}
 	}
 }
+//todo | Function for Search
 function RegexFunc(x) {
 	listParent.innerHTML = ""
 	let regex = new RegExp(`${input.value}`, 'gi')
